@@ -3,10 +3,15 @@ import {Box, Grid} from "@mui/material";
 import {H2} from "@components/atoms/CustomTypography"
 import PostItem from "@components/post/PostItem"
 
+type dataTypes = {
+  name: String,
+}
+
 type categoryProps = {
   articles : Array<any>,
-  data: object
+  data: dataTypes,
 }
+
 
 const CategoryPage : FC<categoryProps> = ({articles, data}) => {
   return (

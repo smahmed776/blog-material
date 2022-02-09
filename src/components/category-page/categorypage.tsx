@@ -4,8 +4,8 @@ import {H2} from "@components/atoms/CustomTypography"
 import PostItem from "@components/post/PostItem"
 
 type categoryProps = {
-  articles : object[],
-  data: object
+  articles : Array<any>,
+  data: Object<any>
 }
 
 const CategoryPage : FC<categoryProps> = ({articles, data}) => {

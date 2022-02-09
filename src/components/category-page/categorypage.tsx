@@ -3,8 +3,12 @@ import {Box, Grid} from "@mui/material";
 import {H2} from "@components/atoms/CustomTypography"
 import PostItem from "@components/post/PostItem"
 
+type categoryProps = {
+  articles : object[],
+  data: object
+}
 
-const CategoryPage : FC = ({articles, data}) => {
+const CategoryPage : FC<categoryProps> = ({articles, data}) => {
   return (
       <Box sx={{bgcolor:'text.light'}}>
       <Box sx={{p:5, bgcolor:"primary.main", color:"white"}}>

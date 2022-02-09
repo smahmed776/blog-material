@@ -5,7 +5,7 @@ import PostItem from "@components/post/PostItem"
 
 type categoryProps = {
   articles : Array<any>,
-  data: Object<any>
+  data: object<any>
 }
 
 const CategoryPage : FC<categoryProps> = ({articles, data}) => {

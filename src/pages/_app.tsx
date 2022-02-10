@@ -26,7 +26,7 @@ const App = (props: any) => {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Syed Mahbub's blog</title>
+        <title>Syed Mahbub&apos;s blog</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>

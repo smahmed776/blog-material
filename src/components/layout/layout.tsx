@@ -11,11 +11,11 @@ import {
 } from "@mui/material";
 import React, { FC, Fragment } from "react";
 import Footer from "./footer/footer";
-import {categories, engCategories} from "@components/post/post-constants";
+import { categories, engCategories } from "@components/post/post-constants";
 import { useRouter } from "next/router";
 
 const Layout: FC = ({ children }) => {
-const router = useRouter();
+  const router = useRouter();
 
   return (
     <Fragment>
@@ -60,10 +60,17 @@ const router = useRouter();
             }}
           >
             {categories.map((nav, index) => (
-              <CustomLink href={`/categories/${engCategories[index]}`} key={index}>
+              <CustomLink
+                href={`/categories/${engCategories[index]}`}
+                key={index}
+              >
                 <Button
                   variant="text"
-                  className={router.asPath === `/categories/${engCategories[index]}` ? "active" : "not-active"}
+                  className={
+                    router.asPath === `/categories/${engCategories[index]}`
+                      ? "active"
+                      : "not-active"
+                  }
                   sx={{
                     p: 1,
                     fontSize: "1rem",
@@ -75,20 +82,22 @@ const router = useRouter();
                 </Button>
               </CustomLink>
             ))}
-              <CustomLink href="/add/post">
-                <Button
-                  variant="text"
-                  className={router.asPath === "/add/post" ? "active" : "not-active"}
-                  sx={{
-                    p: 1,
-                    fontSize: "1rem",
-                    borderRadius: 0,
-                    transition: "all 0.7s ease",
-                  }}
-                >
-                  নতুন পোস্ট
-                </Button>
-              </CustomLink>
+            <CustomLink href="/add/post">
+              <Button
+                variant="text"
+                className={
+                  router.asPath === "/add/post" ? "active" : "not-active"
+                }
+                sx={{
+                  p: 1,
+                  fontSize: "1rem",
+                  borderRadius: 0,
+                  transition: "all 0.7s ease",
+                }}
+              >
+                নতুন পোস্ট
+              </Button>
+            </CustomLink>
             <IconButton className="not-active" sx={{ borderRadius: 0 }}>
               <Search />
             </IconButton>

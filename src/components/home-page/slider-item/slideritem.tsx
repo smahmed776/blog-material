@@ -24,7 +24,7 @@ const SliderItem: FC = () => {
             <CardMedia
               component="img"
               height="230"
-              image={articles[0].head_image}
+              image={articles[0].image}
               alt="green iguana"
             />
             <CardContent

@@ -10,7 +10,7 @@ const ArticlePage: NextPage = (props: any) => {
   return (
     <Fragment>
       <Head>
-        <title>{props.data.title} | Syed Mahbub's Blog</title>
+        <title>{props.data.title} | Syed Mahbub&apos;s Blog</title>
       </Head>
       <PostPage article={props.data} />
     </Fragment>

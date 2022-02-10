@@ -8,6 +8,7 @@ import { Button, Grid } from "@mui/material";
 import { articles } from "@components/dump-data/data";
 import PostItem from "@components/post/PostItem";
 
+
 const HomePage = () => {
   return (
     <div>
@@ -145,5 +146,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-HomePage.Layout = Layout;

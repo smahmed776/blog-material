@@ -43,8 +43,17 @@ function getStyles(name: string, personName: readonly string[], theme: Theme) {
   };
 }
 
+type articleDataObject = {
+  title: String,
+  author: String,
+  translator?: String,
+  image: String | null,
+  eng_title: String,
+  markdown: String
+}
+
 const CreatePostPage = () => {
-  const [articleData, setArticleData] = useState<object>({
+  const [articleData, setArticleData] = useState<articleDataObject>({
     title: "",
     eng_title: "",
     image: "",
@@ -72,11 +81,11 @@ const CreatePostPage = () => {
       typeof value === "string" ? value.split(",") : value
     );
   };
-  const handleCatChange = (event: SelectChangeEvent<typeof cat>) => {
+  const handleCatChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     const {
       target: { value },
     } = event;
-    setCat([value]);
+    setCat([value as string] );
   };
 
   const handleArticleForm = async (event: any) => {
@@ -166,7 +175,7 @@ const CreatePostPage = () => {
                 label="ক্যাটাগরি সিলেক্ট করুন"
                 sx={{ minWidth: 200 }}
                 value={cat}
-                onChange={handleCatChange}
+                onChange={(event) => handleCatChange(event)}
               >
                 {categories.map((name) => (
                   <MenuItem key={name} value={name}>

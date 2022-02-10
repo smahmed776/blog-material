@@ -20,7 +20,7 @@ import CustomLink from "@components/atoms/CustomLink";
 
 type postPageProps = {
   article: {
-    title: string,
+    title: string;
     image: string;
     cat: string[] | [];
     author: string;

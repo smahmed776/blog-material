@@ -37,11 +37,20 @@ const SliderItem: FC = () => {
                 color: "white",
                 backgroundImage:
                   "linear-gradient(to bottom,#0000001c 0%,rgb(0 0 0) 81%)",
-                  fontFamily:"solaimanlipi"
+                fontFamily: "solaimanlipi",
               }}
             >
-              <Typography gutterBottom variant="h6" sx={{fontFamily: "solaimanlipi", fontSize:"1.5rem" , lineHeight: "25px"}} component="div">
-              শাইখ ইউসুফ আল ক্বারাদাওয়ীকে যেমন দেখেছি
+              <Typography
+                gutterBottom
+                variant="h6"
+                sx={{
+                  fontFamily: "solaimanlipi",
+                  fontSize: "1.5rem",
+                  lineHeight: "25px",
+                }}
+                component="div"
+              >
+                শাইখ ইউসুফ আল ক্বারাদাওয়ীকে যেমন দেখেছি
               </Typography>
               <Typography variant="caption">{articles[0].author}</Typography>
             </CardContent>

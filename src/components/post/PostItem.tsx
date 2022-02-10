@@ -28,7 +28,9 @@ type postItemProps = {
 };
 
 const PostItem: FC<postItemProps> = ({ data, background }) => {
-  const cardBgcolor: String = background ? background as string : "text.light"
+  const cardBgcolor: String = background
+    ? (background as string)
+    : "text.light";
   return (
     <Fragment>
       <Card

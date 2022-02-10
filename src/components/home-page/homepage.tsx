@@ -8,11 +8,10 @@ import { Button, Grid } from "@mui/material";
 import { articles } from "@components/dump-data/data";
 import PostItem from "@components/post/PostItem";
 
-
 const HomePage = () => {
   return (
     <div>
-      <Box sx={{ py: 1.5, overflow:"hidden" }}>
+      <Box sx={{ py: 1.5, overflow: "hidden" }}>
         <Slider
           autoplay
           slidesToShow={4}
@@ -72,7 +71,7 @@ const HomePage = () => {
             <SliderItem />
           </Box>
         </Slider>
-        <Box sx={{ p: 5, }}>
+        <Box sx={{ p: 5 }}>
           <Box
             sx={{
               display: "flex",
@@ -110,8 +109,7 @@ const HomePage = () => {
           </Grid>
         </Box>
 
-
-        <Box sx={{ p:5, bgcolor: "text.light",  }}>
+        <Box sx={{ p: 5, bgcolor: "text.light" }}>
           <Box
             sx={{
               display: "flex",
@@ -137,7 +135,6 @@ const HomePage = () => {
             <Grid item xs={12} sm={4}>
               <PostItem data={articles[0]} background={"white"} />
             </Grid>
-
           </Grid>
         </Box>
       </Box>

@@ -18,7 +18,7 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
 import API from "@api/API";
-import {categories, allTags } from "@components/post/post-constants";
+import { categories, allTags } from "@components/post/post-constants";
 import { useRouter } from "next/router";
 
 const ITEM_HEIGHT = 48;
@@ -32,8 +32,6 @@ const MenuProps = {
   },
 };
 
-
-
 function getStyles(name: string, personName: readonly string[], theme: Theme) {
   return {
     fontWeight:
@@ -44,13 +42,13 @@ function getStyles(name: string, personName: readonly string[], theme: Theme) {
 }
 
 type articleDataObject = {
-  title: String,
-  author: String,
-  translator?: String,
-  image: String | null,
-  eng_title: String,
-  markdown: String
-}
+  title: String;
+  author: String;
+  translator?: String;
+  image: String | null;
+  eng_title: String;
+  markdown: String;
+};
 
 const CreatePostPage = () => {
   const [articleData, setArticleData] = useState<articleDataObject>({
@@ -62,7 +60,7 @@ const CreatePostPage = () => {
     markdown: "",
   });
   const theme = useTheme();
-  const router = useRouter()
+  const router = useRouter();
   const handleArticleData = (props: any) => (event: any) => {
     setArticleData((prev) => ({
       ...prev,
@@ -81,11 +79,13 @@ const CreatePostPage = () => {
       typeof value === "string" ? value.split(",") : value
     );
   };
-  const handleCatChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+  const handleCatChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
     const {
       target: { value },
     } = event;
-    setCat([value as string] );
+    setCat([value as string]);
   };
 
   const handleArticleForm = async (event: any) => {
@@ -104,8 +104,8 @@ const CreatePostPage = () => {
       const res = await API.post("/new-article", data, {
         headers: { "Content-Type": "application/json" },
       });
-      if(res.data.redirect){
-        router.push(`/articles/${res.data.redirect}`)
+      if (res.data.redirect) {
+        router.push(`/articles/${res.data.redirect}`);
       }
     } catch (error) {
       console.error(error);
@@ -228,9 +228,9 @@ const CreatePostPage = () => {
               multiline
               rows={10}
               inputProps={{
-                minLength: 350
+                minLength: 350,
               }}
-              helperText= "Must be at least 350 character long."
+              helperText="Must be at least 350 character long."
               required
             />
           </Grid>

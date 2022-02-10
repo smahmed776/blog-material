@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import CategoryPage from "@components/category-page/categorypage";
-import { engCategories, categories } from "@components/post/post-constants";
 import API from "@api/API";
 
 type categoryProps = {
@@ -22,9 +21,7 @@ const CategoryPageHandler: NextPage<categoryProps> = (props) => {
 };
 
 export async function getServerSideProps(context: any) {
-  const { name } = context.query;
-  const indexOfName = engCategories.indexOf(name);
-  const res: any = await API.get(`/categories/${categories[indexOfName]}`);
+  const res: any = await API.get(`/categories/${context.query.name}`);
   const data: any = res.data.cat;
   if (!data) {
     return {

@@ -253,10 +253,11 @@ const PostPage: FC<postPageProps> = ({ article }): ReactElement => {
                 textAlign: "justify",
                 overflow: "hidden",
                 "& blockquote": {
-                  ml: 0,
-                  pl: 5,
+                  mx: 1,
+                  px: 5,
                   borderLeft: 3,
                   borderColor: "primary.dark",
+                  bgcolor:"text.light"
                 },
               }}
               ref={textRef}

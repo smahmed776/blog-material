@@ -43,7 +43,7 @@ export default async function newArticle(
         if (!findCategory) {
           const createCategory = new Category({
             name: cat[0],
-            articles: [doc._id],
+            articleIds: [doc._id],
           });
           await createCategory.save();
         } else {
@@ -51,7 +51,7 @@ export default async function newArticle(
             { name: cat[0] },
             {
               $push: {
-                articles: doc._id,
+                articleIds: doc._id,
               },
             },
             {

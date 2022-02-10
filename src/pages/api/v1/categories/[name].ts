@@ -11,7 +11,9 @@ export default async function categoryHandler(
     await dbConnect();
     const { name } = req.query;
     const indexOfName = engCategories.indexOf(name as string);
-    const findCategory = await Category.findOne({ name: categories[indexOfName] });
+    const findCategory = await Category.findOne({
+      name: categories[indexOfName],
+    });
     if (!findCategory) {
       return res.status(404).json({
         body: req.body,
@@ -20,24 +22,23 @@ export default async function categoryHandler(
         message: "category not found!",
       });
     }
-    await Category.findOne({ name: categories[indexOfName]  })
-      .clone()
-      .populate("articles")
-      .then((cat) =>
-        res.status(200).json({
-          body: req.body,
-          query: req.query,
-          cookies: req.cookies,
-          cat,
-        })
-      )
-      .catch((error) =>
-        res.status(400).json({
-          body: req.body,
-          query: req.query,
-          cookies: req.cookies,
-          message: error.message,
-        })
-      );
+    const getArticles = await Category.findOne({
+      name: categories[indexOfName],
+    }).populate({path: "articleIds", model:"Article"})
+    if (getArticles) {
+      return res.status(200).json({
+        body: req.body,
+        query: req.query,
+        cookies: req.cookies,
+        getArticles,
+      });
+    }
+
+    res.status(400).json({
+      body: req.body,
+      query: req.query,
+      cookies: req.cookies,
+      message: "error ocurred",
+    });
   }
 }

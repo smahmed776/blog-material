@@ -12,7 +12,7 @@ const categorySchema = new mongoose.Schema({
   articles: [{
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "Article"
+    ref: "articles"
   }],
   
 });

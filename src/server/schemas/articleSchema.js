@@ -67,3 +67,4 @@ mongoose.models = {};
 const Article = mongoose.model("Article", articleSchema);
 
 module.exports = Article;
+

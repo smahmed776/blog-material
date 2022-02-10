@@ -22,10 +22,7 @@ export default async function categoryHandler(
     }
     await Category.findOne({ name: categories[indexOfName]  })
       .clone()
-      .populate({
-        path: "articles",
-        model: "Article",
-      })
+      .populate("articles")
       .then((cat) =>
         res.status(200).json({
           body: req.body,
